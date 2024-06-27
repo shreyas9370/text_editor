@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"text-editor/controllers"
 	"text-editor/models"
 
 	"github.com/gin-gonic/gin"
@@ -37,6 +38,8 @@ func main() {
 	}
 
 	r := gin.Default()
+
+	r.POST("/add", controllers.AddText(db))
 
 	err = r.Run(":8080")
 	if err != nil {
