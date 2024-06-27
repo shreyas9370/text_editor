@@ -12,3 +12,7 @@ type History struct {
 	Content string `gorm:"type:text;not null"`
 	Action  string `gorm:"type:enum('add', 'delete');not null"`
 }
+
+type DeleteRequest struct {
+	ID uint `json:"id"`
+}
